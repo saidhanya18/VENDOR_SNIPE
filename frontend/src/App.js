@@ -120,7 +120,7 @@ function LandingPage({ setPage }) {
     };
     const t = setTimeout(tick, 600);
     return () => clearTimeout(t);
-  }, []);
+  }, [phrases]);
 
   return (
     <div style={{minHeight:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"80px 24px 40px",position:"relative",zIndex:2}}>
@@ -187,7 +187,7 @@ function HomePage({ setPage, setQuery }) {
   ];
 
   const go = (q) => { const v = q||input; if (!v.trim()) return; setQuery(v); setPage("agent"); };
-  useEffect(() => { inputRef.current?.focus(); }, []);
+  useEffect(() => { inputRef.current?.focus(); }, [phrases]);
 
   return (
     <div style={{minHeight:"100vh",padding:"100px 24px 60px",position:"relative",zIndex:2,maxWidth:760,margin:"0 auto"}}>
