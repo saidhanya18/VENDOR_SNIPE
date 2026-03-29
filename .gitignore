@@ -1,1 +1,19 @@
-node_modules
+# dependencies
+node_modules/
+frontend/node_modules/
+
+# env files
+.env
+frontend/.env
+
+# build files
+build/
+frontend/build/
+
+# vercel
+.vercel
+
+# misc
+.DS_Store
+
+package-lock.json

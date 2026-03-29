@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+const BASE_URL = process.env.REACT_APP_API_URL;
 
 // ─── STYLES ───────────────────────────────────────────────────────────────────
 const css = `
@@ -44,7 +45,7 @@ function Background() { return <><div className="grid-bg"/><div className="noise
 async function callAI(messages, { query = "", vendors = [], bestChoice = "" } = {}) {
   const lastMessage = messages[messages.length - 1].content;
   
-  const res = await fetch("http://localhost:5000/chat", {
+  const res = await fetch(`${BASE_URL}/chat`,{
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ 
@@ -101,7 +102,12 @@ function Navbar({ page, setPage }) {
 // ─── LANDING ──────────────────────────────────────────────────────────────────
 function LandingPage({ setPage }) {
   const [typed, setTyped] = useState("");
-  const phrases = ["best HR tools for 50-person startup","payment gateway for Indian startup","CRM for B2B SaaS company","cybersecurity tools for SMB"];
+  const phrases = useRef([
+  "best HR tools for 50-person startup",
+  "payment gateway for Indian startup",
+  "CRM for B2B SaaS company",
+  "cybersecurity tools for SMB"
+]).current;
   const pidx = useRef(0), cidx = useRef(0), del = useRef(false);
 
   useEffect(() => {
@@ -120,7 +126,7 @@ function LandingPage({ setPage }) {
     };
     const t = setTimeout(tick, 600);
     return () => clearTimeout(t);
-  }, [phrases]);
+  }, []);
 
   return (
     <div style={{minHeight:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"80px 24px 40px",position:"relative",zIndex:2}}>
@@ -187,7 +193,7 @@ function HomePage({ setPage, setQuery }) {
   ];
 
   const go = (q) => { const v = q||input; if (!v.trim()) return; setQuery(v); setPage("agent"); };
-  useEffect(() => { inputRef.current?.focus(); }, [phrases]);
+  useEffect(() => { inputRef.current?.focus(); }, []);
 
   return (
     <div style={{minHeight:"100vh",padding:"100px 24px 60px",position:"relative",zIndex:2,maxWidth:760,margin:"0 auto"}}>
@@ -270,8 +276,9 @@ const runAgent = async () => {
   const cleanQuery = query.trim().toLowerCase();
 
   // Connect to the Express SSE endpoint
-  const eventSource = new EventSource(`http://localhost:5000/run-agent?input=${encodeURIComponent(cleanQuery)}`);
-
+const eventSource = new EventSource(
+  `${BASE_URL}/run-agent?input=${encodeURIComponent(cleanQuery)}`
+);
 eventSource.onmessage = (event) => {
     const data = JSON.parse(event.data);
     if (data.log) {
