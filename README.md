@@ -16,11 +16,11 @@
 ```
 
 ### **Stop guessing. Start knowing.**
-### A live, multi-step AI web agent that researches, scores, and recommends vendors — in real time.
+### Finds, evaluates, and selects the best vendor using live web data, pricing, and reviews — in seconds.
 
 <br/>
 
-[🚀 **Try it Live**](https://vendor-snipe.vercel.app/) &nbsp;·&nbsp; [📖 **Read the Deep Dive**](https://medium.com/@saidhanyashree/revolutionizing-vendor-selection-with-a-live-ai-web-agent-20c870bab764) &nbsp;·&nbsp; [🎬 **Watch Demo**](https://drive.google.com/file/d/1Wd0SWncslUqnkNdvx6ciqUP1zfrOWn0N/view?usp=sharing)
+[🚀 **Try the Live App**](https://vendor-snipe.vercel.app/) &nbsp;·&nbsp; [📖 **See How It Works**](https://medium.com/@saidhanyashree/revolutionizing-vendor-selection-with-a-live-ai-web-agent-20c870bab764) &nbsp;·&nbsp; [🎬 **Watch It in Action**](https://drive.google.com/file/d/1Wd0SWncslUqnkNdvx6ciqUP1zfrOWn0N/view?usp=sharing)
 
 </div>
 
@@ -78,9 +78,13 @@ Your query: "Best project management tool under $50 for a small team"
 
 ### 🌐 Always-Live Data
 No cached results. No stale databases. The agent fetches **real pricing, real reviews, real features** — as they exist on vendor websites right now.
+Unlike static tools, VendorSnipe fetches real-time pricing, reviews, and features directly from the web at query time
 
 ### 🧠 Multi-Step AI Reasoning
-The agent thinks like a senior analyst: first understanding what you need, then researching each option, then synthesizing a verdict. Not a keyword match. Actual reasoning.
+- Understands your requirement  
+- Researches vendors live  
+- Compares across multiple dimensions  
+- Produces a final recommendation
 
 ### 📊 Visual Results Dashboard
 Every vendor gets a **result card** with:
@@ -89,6 +93,7 @@ Every vendor gets a **result card** with:
 - Feature relevance score  
 - Aggregated rating
 - Key strengths and weaknesses
+  VendorSnipe doesn’t just list vendors — it decides the best one for you, with reasoning.
 
 ### 🔍 Custom Query Intelligence
 Ask naturally. The agent understands constraints like budget, team size, and use case — and filters results accordingly.
