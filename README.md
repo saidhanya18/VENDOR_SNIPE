@@ -18,6 +18,14 @@
 ### **Stop guessing. Start knowing.**
 ### Finds, evaluates, and selects the best vendor using live web data, pricing, and reviews — in seconds.
 
+> ⚠️ **Backend Warm-up Required (Free Tier Hosting)**  
+> This project uses Render’s free tier, which may put the backend to sleep.  
+>  
+> 👉 Step 1: Open backend → https://vendor-snipe-2.onrender.com/  
+> 👉 Step 2: Wait ~30–60 seconds  
+> 👉 Step 3: Refresh → https://vendor-snipe.vercel.app/
+> ⚡ This delay only occurs on first request due to free-tier cold starts.
+
 <br/>
 
 [🚀 **Try the Live App**](https://vendor-snipe.vercel.app/) &nbsp;·&nbsp; [📖 **See How It Works**](https://medium.com/@saidhanyashree/revolutionizing-vendor-selection-with-a-live-ai-web-agent-20c870bab764) &nbsp;·&nbsp; [🎬 **Watch It in Action**](https://drive.google.com/file/d/1Wd0SWncslUqnkNdvx6ciqUP1zfrOWn0N/view?usp=sharing)
